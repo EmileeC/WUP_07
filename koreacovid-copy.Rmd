@@ -1,0 +1,81 @@
+---
+title: "covid 19"
+author: "Emilee Coronel"
+date: "10/5/2021"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+options(digits=2)
+require(tidyverse)
+require(tigerstats)
+require(lubridate)
+kRdata <- read.csv(file = 'kRdata.csv')
+kRdata$state<-as.factor(kRdata$state)
+kRdata$state<-as.factor(kRdata$result)
+kRdata$sex<-as.factor(kRdata$sex)
+kRdata$sex<-as.factor(kRdata$sex)
+```
+
+
+
+### Data is from the Patient_Info dataset from South Korea 1 Jan to 1 May 
+### This is contained in a downloadable zip file from kaggle
+
+Some of the data was uncoded for sex - sex must be just male or female
+77 of the data entries were coded sex  as blank, so we omit these.
+state of a patient must be died or alive - we adjust that as well   
+  
+# Question 1 - Is dying independent of sex
+
+
+
+
+Table of patients:
+```{r}
+
+# cross tabulation, patient state by gender
+
+with(kRdata, table(Sex, result))
+
+```
+
+## We create two bar charts - one based on frequency and the other on percent, use ggplot commands to do this
+
+
+```{r}
+barchartGC(~result + Sex,data=kRdata)
+```
+
+
+From this bar chart, we can see that more women are alive than men, with woren being more prominent than men. The amount of women and
+the men that died were not substantial. All and all, there were more men that died than women.  
+
+
+
+
+
+
+```{r}
+barchartGC(~class + Sex,data=ucdavis1, type="percent")
+
+```
+
+
+
+
+
+  
+## Numerical results
+
+
+## Inferential results 
+
+
+
+
+## Conclusions
+
