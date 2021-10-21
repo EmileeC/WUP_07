@@ -92,20 +92,30 @@ We now have the correct precentages, whereos we can see that the alive group was
 ```{r}
 chisq.test(table1)
 chisqtestGC(table1)
-
-
-
-fisher.test(table1)
 ```
+
+
+
 
 
 We now have the correct percentages, where we can see that the alive group was F 56N and M 44%.In the dead group F ranged in at 36% and M came in at 64%. So we can see here there is a backward relationship between males and females, Females were predominantly alive whereas men were predominantly dead, 1.4 F ended up dead, where 3% of males ended up dead. Males deaths were double the rate of women.  
 
 
 
+```{r}
+fisher.test(table1)
+```
 
+
+The fisher test give us the odds of dying for males ts (44/1411) and the odds of the females dying is (25/1831), when you divide these two numbers you get 2,3. The odds ratio shows that males are 2.3 times more likely to die. I also see the confidence intervals are 1,4 to 3,9. 
 
 
 
 ## Conclusions
+
+
+ In conclusion we can see a big statistical difference between men and women. Seemingly more men die of covid vs women. Our p-value is very small, so therefore we reject the null hypothesis.More importantly we can see more men die from this disease vs women.  
+
+
+
 
