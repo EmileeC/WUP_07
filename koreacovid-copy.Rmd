@@ -65,6 +65,10 @@ barchartGC(~class + Sex,data=ucdavis1, type="percent")
 ```
 
 
+We can see from the second bar chart that about 55-56% of women were alive vs about 40* of men,and from the dead category we can see more men died vs the amount of women, From both bar charts We can see that women did better in this study.  
+
+
+
 
 
 
